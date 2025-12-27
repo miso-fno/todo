@@ -43,6 +43,51 @@ function deleteTodo(id) {
     renderTodos();
 }
 
+function editTodo(id, newText) {
+    const todo = todos.find(t => t.id === id);
+    if (todo) {
+        todo.text = newText.trim();
+        renderTodos();
+    }
+}
+
+function startEdit(id, spanElement, liElement) {
+    const todo = todos.find(t => t.id === id);
+    if (!todo) return;
+
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'edit-input';
+    input.value = todo.text;
+
+    const saveEdit = () => {
+        const newText = input.value.trim();
+        if (newText !== '' && newText !== todo.text) {
+            editTodo(id, newText);
+        } else {
+            renderTodos();
+        }
+    };
+
+    const cancelEdit = () => {
+        renderTodos();
+    };
+
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            saveEdit();
+        } else if (e.key === 'Escape') {
+            cancelEdit();
+        }
+    });
+
+    input.addEventListener('blur', saveEdit);
+
+    spanElement.replaceWith(input);
+    input.focus();
+    input.select();
+}
+
 function renderTodos() {
     todoList.innerHTML = '';
 
@@ -68,6 +113,11 @@ function renderTodos() {
         span.className = 'todo-text';
         span.textContent = todo.text;
 
+        const editBtn = document.createElement('button');
+        editBtn.className = 'edit-btn';
+        editBtn.textContent = '編集';
+        editBtn.addEventListener('click', () => startEdit(todo.id, span, li));
+
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
         deleteBtn.textContent = '削除';
@@ -75,6 +125,7 @@ function renderTodos() {
 
         li.appendChild(checkbox);
         li.appendChild(span);
+        li.appendChild(editBtn);
         li.appendChild(deleteBtn);
 
         todoList.appendChild(li);

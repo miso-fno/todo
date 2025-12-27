@@ -109,6 +109,32 @@ h1 {
     color: #2d3748;
 }
 
+.edit-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #4299e1;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #2d3748;
+    outline: none;
+}
+
+.edit-btn {
+    padding: 8px 15px;
+    background: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background: #38a169;
+}
+
 .delete-btn {
     padding: 8px 15px;
     background: #fc8181;
