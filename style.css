@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,18 +16,19 @@ body {
 
 .container {
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     padding: 30px;
     width: 100%;
     max-width: 500px;
 }
 
 h1 {
-    color: #333;
+    color: #2d3748;
     text-align: center;
     margin-bottom: 30px;
     font-size: 2em;
+    font-weight: 600;
 }
 
 .input-section {
@@ -39,30 +40,31 @@ h1 {
 #todoInput {
     flex: 1;
     padding: 12px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 5px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
     font-size: 16px;
     transition: border-color 0.3s;
 }
 
 #todoInput:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #4299e1;
 }
 
 #addBtn {
     padding: 12px 25px;
-    background: #667eea;
+    background: #4299e1;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s;
+    font-weight: 500;
 }
 
 #addBtn:hover {
-    background: #5568d3;
+    background: #3182ce;
 }
 
 #todoList {
@@ -74,19 +76,20 @@ h1 {
     align-items: center;
     gap: 10px;
     padding: 15px;
-    background: #f8f9fa;
-    border-radius: 5px;
+    background: #f7fafc;
+    border-radius: 8px;
     margin-bottom: 10px;
     transition: all 0.3s;
+    border: 1px solid #e2e8f0;
 }
 
 .todo-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .todo-item.completed {
-    background: #e8f5e9;
+    background: #edf7ed;
 }
 
 .todo-item.completed .todo-text {
@@ -103,26 +106,27 @@ h1 {
 .todo-text {
     flex: 1;
     font-size: 16px;
-    color: #333;
+    color: #2d3748;
 }
 
 .delete-btn {
     padding: 8px 15px;
-    background: #ff6b6b;
+    background: #fc8181;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s;
+    font-weight: 500;
 }
 
 .delete-btn:hover {
-    background: #ee5a52;
+    background: #f56565;
 }
 
 .empty-message {
     text-align: center;
-    color: #999;
+    color: #a0aec0;
     padding: 40px 20px;
     font-size: 18px;
 }
